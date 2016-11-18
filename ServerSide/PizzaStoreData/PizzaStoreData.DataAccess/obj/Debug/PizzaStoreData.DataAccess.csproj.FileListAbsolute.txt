@@ -1,0 +1,5 @@
+C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreData\PizzaStoreData.DataAccess\bin\Debug\PizzaStoreData.DataAccess.dll
+C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreData\PizzaStoreData.DataAccess\bin\Debug\PizzaStoreData.DataAccess.pdb
+C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreData\PizzaStoreData.DataAccess\obj\Debug\PizzaStoreData.DataAccess.csprojResolveAssemblyReference.cache
+C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreData\PizzaStoreData.DataAccess\obj\Debug\PizzaStoreData.DataAccess.dll
+C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreData\PizzaStoreData.DataAccess\obj\Debug\PizzaStoreData.DataAccess.pdb
