@@ -9,11 +9,15 @@ C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreData\PizzaStoreData.
 C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreData\PizzaStoreData.DataService\bin\Microsoft.AI.Web.dll
 C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreData\PizzaStoreData.DataService\bin\Microsoft.AI.WindowsServer.dll
 C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreData\PizzaStoreData.DataService\bin\Microsoft.ApplicationInsights.dll
+C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreData\PizzaStoreData.DataService\bin\PizzaStoreData.DataAccess.dll
+C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreData\PizzaStoreData.DataService\bin\EntityFramework.dll
+C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreData\PizzaStoreData.DataService\bin\PizzaStoreData.DataAccess.pdb
 C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreData\PizzaStoreData.DataService\bin\Microsoft.AI.DependencyCollector.xml
 C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreData\PizzaStoreData.DataService\bin\Microsoft.AI.ServerTelemetryChannel.xml
 C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreData\PizzaStoreData.DataService\bin\Microsoft.AI.Web.xml
 C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreData\PizzaStoreData.DataService\bin\Microsoft.AI.WindowsServer.xml
 C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreData\PizzaStoreData.DataService\bin\Microsoft.ApplicationInsights.xml
+C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreData\PizzaStoreData.DataService\bin\EntityFramework.xml
 C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreData\PizzaStoreData.DataService\obj\Debug\PizzaStoreData.DataService.csprojResolveAssemblyReference.cache
 C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreData\PizzaStoreData.DataService\obj\Debug\PizzaStoreData.DataService.dll
 C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreData\PizzaStoreData.DataService\obj\Debug\PizzaStoreData.DataService.pdb

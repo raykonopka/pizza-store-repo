@@ -1,5 +1,9 @@
+C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreData\PizzaStoreData.DataAccess\bin\Debug\PizzaStoreData.DataAccess.dll.config
 C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreData\PizzaStoreData.DataAccess\bin\Debug\PizzaStoreData.DataAccess.dll
 C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreData\PizzaStoreData.DataAccess\bin\Debug\PizzaStoreData.DataAccess.pdb
-C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreData\PizzaStoreData.DataAccess\obj\Debug\PizzaStoreData.DataAccess.csprojResolveAssemblyReference.cache
+C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreData\PizzaStoreData.DataAccess\bin\Debug\EntityFramework.dll
+C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreData\PizzaStoreData.DataAccess\bin\Debug\EntityFramework.SqlServer.dll
+C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreData\PizzaStoreData.DataAccess\bin\Debug\EntityFramework.xml
+C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreData\PizzaStoreData.DataAccess\bin\Debug\EntityFramework.SqlServer.xml
 C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreData\PizzaStoreData.DataAccess\obj\Debug\PizzaStoreData.DataAccess.dll
 C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreData\PizzaStoreData.DataAccess\obj\Debug\PizzaStoreData.DataAccess.pdb

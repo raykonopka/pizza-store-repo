@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PizzaStoreData.DataAccess;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -8,24 +9,13 @@ using System.Text;
 
 namespace PizzaStoreData.DataService
 {
-       public class PizzaStoreDataService : IPizzaStoreDataService
+    public class PizzaStoreDataService : IPizzaStoreDataService
     {
-        public string GetData(int value)
-        {
-            return string.Format("You entered: {0}", value);
-        }
+        private EfData db = new EfData();
 
-        public CompositeType GetDataUsingDataContract(CompositeType composite)
+        public List<Pizza> GetPizzas()
         {
-            if (composite == null)
-            {
-                throw new ArgumentNullException("composite");
-            }
-            if (composite.BoolValue)
-            {
-                composite.StringValue += "Suffix";
-            }
-            return composite;
+            return db.GetPizzas();
         }
     }
 }
