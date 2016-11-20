@@ -1,0 +1,9 @@
+C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreData\PizzaStoreData.DataAccess\bin\Release\PizzaStoreData.DataAccess.dll.config
+C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreData\PizzaStoreData.DataAccess\bin\Release\PizzaStoreData.DataAccess.dll
+C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreData\PizzaStoreData.DataAccess\bin\Release\PizzaStoreData.DataAccess.pdb
+C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreData\PizzaStoreData.DataAccess\bin\Release\EntityFramework.dll
+C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreData\PizzaStoreData.DataAccess\bin\Release\EntityFramework.SqlServer.dll
+C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreData\PizzaStoreData.DataAccess\bin\Release\EntityFramework.xml
+C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreData\PizzaStoreData.DataAccess\bin\Release\EntityFramework.SqlServer.xml
+C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreData\PizzaStoreData.DataAccess\obj\Release\PizzaStoreData.DataAccess.dll
+C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreData\PizzaStoreData.DataAccess\obj\Release\PizzaStoreData.DataAccess.pdb
