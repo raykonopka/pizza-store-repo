@@ -68,7 +68,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EfDataTests.cs" />
+    <Compile Include="DataServiceTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -76,9 +76,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PizzaStoreData.DataAccess\PizzaStoreData.DataAccess.csproj">
-      <Project>{8EC8C858-8826-4725-AE6F-381D8CB01163}</Project>
-      <Name>PizzaStoreData.DataAccess</Name>
+    <ProjectReference Include="..\PizzaStoreData.DataService\PizzaStoreData.DataService.csproj">
+      <Project>{836D60C9-804F-4ACE-AEF6-42DA85171956}</Project>
+      <Name>PizzaStoreData.DataService</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

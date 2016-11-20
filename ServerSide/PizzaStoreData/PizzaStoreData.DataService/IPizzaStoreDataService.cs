@@ -1,4 +1,5 @@
 ﻿using PizzaStoreData.DataAccess;
+using PizzaStoreData.DataService.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +14,7 @@ namespace PizzaStoreData.DataService
     public interface IPizzaStoreDataService
     {
         [OperationContract]
-        List<Pizza> GetPizzas();
+        List<PizzaDAO> GetPizzas();
     }
 
 }

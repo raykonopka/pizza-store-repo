@@ -41,6 +41,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
       <Private>True</Private>
@@ -70,6 +78,8 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -90,14 +100,96 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="PizzaStoreDataService.svc" />
+    <Content Include="PizzaStoreModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PizzaStoreModel.edmx</DependentUpon>
+      <LastGenOutput>PizzaStoreModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="PizzaStoreModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PizzaStoreModel.edmx</DependentUpon>
+      <LastGenOutput>PizzaStoreModel.cs</LastGenOutput>
+    </Content>
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Address.cs">
+      <DependentUpon>PizzaStoreModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CheeseType.cs">
+      <DependentUpon>PizzaStoreModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CrustType.cs">
+      <DependentUpon>PizzaStoreModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Customer.cs">
+      <DependentUpon>PizzaStoreModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataMapper.cs" />
+    <Compile Include="DaysOpen.cs">
+      <DependentUpon>PizzaStoreModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DaysOpenEntry.cs">
+      <DependentUpon>PizzaStoreModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DayTitle.cs">
+      <DependentUpon>PizzaStoreModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EfData.cs" />
+    <Compile Include="Models\PizzaDAO.cs" />
+    <Compile Include="Order.cs">
+      <DependentUpon>PizzaStoreModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PaymentMethod.cs">
+      <DependentUpon>PizzaStoreModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Pizza.cs">
+      <DependentUpon>PizzaStoreModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PizzaSize.cs">
+      <DependentUpon>PizzaStoreModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="PizzaStoreDataService.svc.cs">
       <DependentUpon>PizzaStoreDataService.svc</DependentUpon>
     </Compile>
     <Compile Include="IPizzaStoreDataService.cs" />
+    <Compile Include="PizzaStoreModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PizzaStoreModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PizzaStoreModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PizzaStoreModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PizzaStoreModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PizzaStoreModel.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SauceType.cs">
+      <DependentUpon>PizzaStoreModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Store.cs">
+      <DependentUpon>PizzaStoreModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>PizzaStoreModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Topping.cs">
+      <DependentUpon>PizzaStoreModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ToppingCategory.cs">
+      <DependentUpon>PizzaStoreModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ToppingList.cs">
+      <DependentUpon>PizzaStoreModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ToppingPlacement.cs">
+      <DependentUpon>PizzaStoreModel.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -107,7 +199,14 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <None Include="Properties\PublishProfiles\AWS-EC2-PizzaStoreService.pubxml" />
+    <EntityDeploy Include="PizzaStoreModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>PizzaStoreModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="PizzaStoreModel.edmx.diagram">
+      <DependentUpon>PizzaStoreModel.edmx</DependentUpon>
+    </Content>
+    <None Include="Properties\PublishProfiles\AWS-EC2-PizzaStoreDataService.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -116,10 +215,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PizzaStoreData.DataAccess\PizzaStoreData.DataAccess.csproj">
-      <Project>{8EC8C858-8826-4725-AE6F-381D8CB01163}</Project>
-      <Name>PizzaStoreData.DataAccess</Name>
-    </ProjectReference>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

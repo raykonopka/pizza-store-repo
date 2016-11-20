@@ -1,4 +1,5 @@
 C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreData\PizzaStoreData.DataTests\bin\Debug\xunit.abstractions.dll
+C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreData\PizzaStoreData.DataTests\bin\Debug\ApplicationInsights.config
 C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreData\PizzaStoreData.DataTests\bin\Debug\xunit.runner.visualstudio.testadapter.dll
 C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreData\PizzaStoreData.DataTests\bin\Debug\xunit.runner.utility.desktop.dll
 C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreData\PizzaStoreData.DataTests\bin\Debug\PizzaStoreData.DataTests.dll.config
@@ -6,11 +7,11 @@ C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreData\PizzaStoreData.
 C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreData\PizzaStoreData.DataTests\bin\Debug\PizzaStoreData.DataTests.pdb
 C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreData\PizzaStoreData.DataTests\bin\Debug\EntityFramework.dll
 C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreData\PizzaStoreData.DataTests\bin\Debug\EntityFramework.SqlServer.dll
-C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreData\PizzaStoreData.DataTests\bin\Debug\PizzaStoreData.DataAccess.dll
+C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreData\PizzaStoreData.DataTests\bin\Debug\PizzaStoreData.DataService.dll
 C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreData\PizzaStoreData.DataTests\bin\Debug\xunit.assert.dll
 C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreData\PizzaStoreData.DataTests\bin\Debug\xunit.core.dll
 C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreData\PizzaStoreData.DataTests\bin\Debug\xunit.execution.desktop.dll
-C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreData\PizzaStoreData.DataTests\bin\Debug\PizzaStoreData.DataAccess.pdb
+C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreData\PizzaStoreData.DataTests\bin\Debug\PizzaStoreData.DataService.pdb
 C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreData\PizzaStoreData.DataTests\bin\Debug\EntityFramework.xml
 C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreData\PizzaStoreData.DataTests\bin\Debug\EntityFramework.SqlServer.xml
 C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreData\PizzaStoreData.DataTests\bin\Debug\xunit.assert.pdb

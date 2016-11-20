@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="Default Web Site/pizza-store-api" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\RevatureDev\\GitHub\\pizza-store-repo\\ServerSide\\PizzaStoreAPI\\PizzaStoreAPI\.Service\\obj\\Debug\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\RevatureDev\\GitHub\\pizza-store-repo\\ServerSide\\PizzaStoreAPI\\PizzaStoreAPI\.Service\\obj\\Debug\\Package\\PackageTmp$" />
+  </parameter>
+</parameters>

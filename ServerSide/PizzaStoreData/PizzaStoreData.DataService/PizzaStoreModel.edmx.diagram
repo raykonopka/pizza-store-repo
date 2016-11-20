@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="76ccb80fe9a848be91c8b11668da05b9" Name="Diagram1">
+        <EntityTypeShape EntityType="PizzaStoreDBModel.sysdiagram" Width="1.5" PointX="7.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PizzaStoreDBModel.Address" Width="1.5" PointX="0.75" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PizzaStoreDBModel.CheeseType" Width="1.5" PointX="5.25" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PizzaStoreDBModel.CrustType" Width="1.5" PointX="5.25" PointY="11.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PizzaStoreDBModel.Customer" Width="1.5" PointX="3" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PizzaStoreDBModel.DaysOpen" Width="1.5" PointX="5.25" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PizzaStoreDBModel.DaysOpenEntry" Width="1.5" PointX="3" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PizzaStoreDBModel.DayTitle" Width="1.5" PointX="0.75" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PizzaStoreDBModel.Order" Width="1.5" PointX="5.25" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PizzaStoreDBModel.PaymentMethod" Width="1.5" PointX="3" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="PizzaStoreDBModel.Pizza" Width="1.5" PointX="7.5" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PizzaStoreDBModel.PizzaSize" Width="1.5" PointX="5.25" PointY="14.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PizzaStoreDBModel.SauceType" Width="1.5" PointX="5.25" PointY="17" IsExpanded="true" />
+        <EntityTypeShape EntityType="PizzaStoreDBModel.Store" Width="1.5" PointX="3" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PizzaStoreDBModel.ToppingCategory" Width="1.5" PointX="5.25" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PizzaStoreDBModel.ToppingList" Width="1.5" PointX="9.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PizzaStoreDBModel.ToppingPlacement" Width="1.5" PointX="7.5" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PizzaStoreDBModel.Topping" Width="1.5" PointX="7.5" PointY="19.5" IsExpanded="true" />
+        <AssociationConnector Association="PizzaStoreDBModel.fk_customers_deliveryaddressid" ManuallyRouted="false" />
+        <AssociationConnector Association="PizzaStoreDBModel.fk_stores_storeaddressid" ManuallyRouted="false" />
+        <AssociationConnector Association="PizzaStoreDBModel.fk_pizzas_cheesetypeid" ManuallyRouted="false" />
+        <AssociationConnector Association="PizzaStoreDBModel.fk_pizzas_crusttypeid" ManuallyRouted="false" />
+        <AssociationConnector Association="PizzaStoreDBModel.fk_orders_customerid" ManuallyRouted="false" />
+        <AssociationConnector Association="PizzaStoreDBModel.fk_daysopen_dayopenentryid" ManuallyRouted="false" />
+        <AssociationConnector Association="PizzaStoreDBModel.fk_daysopen_storeid" ManuallyRouted="false" />
+        <AssociationConnector Association="PizzaStoreDBModel.fk_daysopenentries_daytitleid" ManuallyRouted="false" />
+        <AssociationConnector Association="PizzaStoreDBModel.fk_orders_paymentmethodid" ManuallyRouted="false" />
+        <AssociationConnector Association="PizzaStoreDBModel.fk_pizzas_orderid" ManuallyRouted="false" />
+        <AssociationConnector Association="PizzaStoreDBModel.fk_pizzas_pizzasizeid" ManuallyRouted="false" />
+        <AssociationConnector Association="PizzaStoreDBModel.fk_pizzas_saucetypeid" ManuallyRouted="false" />
+        <AssociationConnector Association="PizzaStoreDBModel.fk_toppinglists_pizzaid" ManuallyRouted="false" />
+        <AssociationConnector Association="PizzaStoreDBModel.fk_toppings_toppingcategoryid" ManuallyRouted="false" />
+        <AssociationConnector Association="PizzaStoreDBModel.fk_toppinglists_toppingid" ManuallyRouted="false" />
+        <AssociationConnector Association="PizzaStoreDBModel.fk_toppinglists_toppingplacementid" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

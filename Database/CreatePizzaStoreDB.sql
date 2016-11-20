@@ -466,7 +466,7 @@ GO
 /*
 -- Remove existing data
 DELETE FROM PizzaStore.Pizzas
-WHERE Id = 1;
+WHERE Id = 4;
 GO
 */
 
