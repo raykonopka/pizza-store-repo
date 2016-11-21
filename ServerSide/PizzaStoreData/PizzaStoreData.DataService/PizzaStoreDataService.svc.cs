@@ -29,11 +29,22 @@ namespace PizzaStoreData.DataService
             return orders;
         }
 
+        public List<PaymentMethodDAO> GetPaymentMethods()
+        {
+            var paymentMethods = new List<PaymentMethodDAO>();
+
+            foreach (var pm in db.GetPaymentMethods())
+            {
+                paymentMethods.Add(DataMapper.MapToPaymentMethodDAO(pm));
+            }
+
+            return paymentMethods;
+        }
 
         //Store Related
 
-        
-        
+
+
         //Pizza Options
         public List<PizzaDAO> GetPizzas()
         {
@@ -145,6 +156,12 @@ namespace PizzaStoreData.DataService
             return toppingLists;
         }
 
+
+
+        public bool postOrder(OrderDAO newOrder)
+        {
+            return db.AddNewOrder(newOrder);
+        }
         #endregion
 
     }

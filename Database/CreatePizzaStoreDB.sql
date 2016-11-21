@@ -310,7 +310,7 @@ VALUES ('Full'), ('Left'), ('Right');
 GO
 
 INSERT INTO PizzaStore.ToppingCategories
-VALUES ('Vegtables'), ('Meats'), ('Additional Cheeses');
+VALUES ('Vegetables'), ('Meats'), ('Additional Cheeses');
 GO
 
 INSERT INTO PizzaStore.Toppings
@@ -465,8 +465,8 @@ GO
 
 /*
 -- Remove existing data
-DELETE FROM PizzaStore.SauceTypes
-WHERE Id = 5;
+DELETE FROM PizzaStore.Orders
+WHERE Id = 1;
 GO
 */
 

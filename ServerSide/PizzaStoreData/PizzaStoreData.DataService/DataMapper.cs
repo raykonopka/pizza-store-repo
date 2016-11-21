@@ -25,6 +25,16 @@ namespace PizzaStoreData.DataService
             return order;
         }
 
+        public static PaymentMethodDAO MapToPaymentMethodDAO(PaymentMethod paymentMethodToMap)
+        {
+            PaymentMethodDAO paymentMethod = new PaymentMethodDAO();
+
+            paymentMethod.Id = paymentMethodToMap.Id;
+            paymentMethod.Name = paymentMethodToMap.PaymentName;
+
+            return paymentMethod;
+        }
+
         #endregion
 
         #region Store Related

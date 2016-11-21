@@ -156,6 +156,67 @@ namespace PizzaStoreAPI.Service.PizzaStoreDataService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="PaymentMethodDAO", Namespace="http://schemas.datacontract.org/2004/07/PizzaStoreData.DataService.Models")]
+    [System.SerializableAttribute()]
+    public partial class PaymentMethodDAO : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name {
+            get {
+                return this.NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameField, value) != true)) {
+                    this.NameField = value;
+                    this.RaisePropertyChanged("Name");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="PizzaDAO", Namespace="http://schemas.datacontract.org/2004/07/PizzaStoreData.DataService.Models")]
     [System.SerializableAttribute()]
     public partial class PizzaDAO : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -905,6 +966,18 @@ namespace PizzaStoreAPI.Service.PizzaStoreDataService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPizzaStoreDataService/GetOrders", ReplyAction="http://tempuri.org/IPizzaStoreDataService/GetOrdersResponse")]
         System.Threading.Tasks.Task<PizzaStoreAPI.Service.PizzaStoreDataService.OrderDAO[]> GetOrdersAsync();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPizzaStoreDataService/GetPaymentMethods", ReplyAction="http://tempuri.org/IPizzaStoreDataService/GetPaymentMethodsResponse")]
+        PizzaStoreAPI.Service.PizzaStoreDataService.PaymentMethodDAO[] GetPaymentMethods();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPizzaStoreDataService/GetPaymentMethods", ReplyAction="http://tempuri.org/IPizzaStoreDataService/GetPaymentMethodsResponse")]
+        System.Threading.Tasks.Task<PizzaStoreAPI.Service.PizzaStoreDataService.PaymentMethodDAO[]> GetPaymentMethodsAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPizzaStoreDataService/postOrder", ReplyAction="http://tempuri.org/IPizzaStoreDataService/postOrderResponse")]
+        bool postOrder(PizzaStoreAPI.Service.PizzaStoreDataService.OrderDAO newOrder);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPizzaStoreDataService/postOrder", ReplyAction="http://tempuri.org/IPizzaStoreDataService/postOrderResponse")]
+        System.Threading.Tasks.Task<bool> postOrderAsync(PizzaStoreAPI.Service.PizzaStoreDataService.OrderDAO newOrder);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPizzaStoreDataService/GetPizzas", ReplyAction="http://tempuri.org/IPizzaStoreDataService/GetPizzasResponse")]
         PizzaStoreAPI.Service.PizzaStoreDataService.PizzaDAO[] GetPizzas();
         
@@ -993,6 +1066,22 @@ namespace PizzaStoreAPI.Service.PizzaStoreDataService {
         
         public System.Threading.Tasks.Task<PizzaStoreAPI.Service.PizzaStoreDataService.OrderDAO[]> GetOrdersAsync() {
             return base.Channel.GetOrdersAsync();
+        }
+        
+        public PizzaStoreAPI.Service.PizzaStoreDataService.PaymentMethodDAO[] GetPaymentMethods() {
+            return base.Channel.GetPaymentMethods();
+        }
+        
+        public System.Threading.Tasks.Task<PizzaStoreAPI.Service.PizzaStoreDataService.PaymentMethodDAO[]> GetPaymentMethodsAsync() {
+            return base.Channel.GetPaymentMethodsAsync();
+        }
+        
+        public bool postOrder(PizzaStoreAPI.Service.PizzaStoreDataService.OrderDAO newOrder) {
+            return base.Channel.postOrder(newOrder);
+        }
+        
+        public System.Threading.Tasks.Task<bool> postOrderAsync(PizzaStoreAPI.Service.PizzaStoreDataService.OrderDAO newOrder) {
+            return base.Channel.postOrderAsync(newOrder);
         }
         
         public PizzaStoreAPI.Service.PizzaStoreDataService.PizzaDAO[] GetPizzas() {

@@ -20,11 +20,16 @@ namespace PizzaStoreData.DataService
         [OperationContract]
         List<OrderDAO> GetOrders();
 
+        [OperationContract]
+        List<PaymentMethodDAO> GetPaymentMethods();
 
-        //Store Related
 
-        
-        
+        //Order Related
+        [OperationContract]
+        bool postOrder(OrderDAO newOrder);
+
+
+
         //Pizza Options
         [OperationContract]
         List<PizzaDAO> GetPizzas();

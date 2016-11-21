@@ -48,5 +48,6 @@ C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreAPI\PizzaStoreAPI.Se
 C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreAPI\PizzaStoreAPI.Service\bin\System.Net.Http.Formatting.xml
 C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreAPI\PizzaStoreAPI.Service\bin\System.Web.Http.xml
 C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreAPI\PizzaStoreAPI.Service\bin\System.Web.Http.WebHost.xml
+C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreAPI\PizzaStoreAPI.Service\obj\Debug\PizzaStoreAPI.Service.csprojResolveAssemblyReference.cache
 C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreAPI\PizzaStoreAPI.Service\obj\Debug\PizzaStoreAPI.Service.dll
 C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreAPI\PizzaStoreAPI.Service\obj\Debug\PizzaStoreAPI.Service.pdb

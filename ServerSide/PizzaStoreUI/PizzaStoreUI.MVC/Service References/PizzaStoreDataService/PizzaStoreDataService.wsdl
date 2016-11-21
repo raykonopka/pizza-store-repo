@@ -16,6 +16,32 @@
           </xs:sequence>
         </xs:complexType>
       </xs:element>
+      <xs:element name="GetPaymentMethods">
+        <xs:complexType>
+          <xs:sequence />
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GetPaymentMethodsResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/PizzaStoreData.DataService.Models" minOccurs="0" name="GetPaymentMethodsResult" nillable="true" type="q2:ArrayOfPaymentMethodDAO" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="postOrder">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/PizzaStoreData.DataService" minOccurs="0" name="newOrder" nillable="true" type="q3:OrderDAO" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="postOrderResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="postOrderResult" type="xs:boolean" />
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
       <xs:element name="GetPizzas">
         <xs:complexType>
           <xs:sequence />
@@ -24,7 +50,7 @@
       <xs:element name="GetPizzasResponse">
         <xs:complexType>
           <xs:sequence>
-            <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/PizzaStoreData.DataService.Models" minOccurs="0" name="GetPizzasResult" nillable="true" type="q2:ArrayOfPizzaDAO" />
+            <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/PizzaStoreData.DataService.Models" minOccurs="0" name="GetPizzasResult" nillable="true" type="q4:ArrayOfPizzaDAO" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>
@@ -36,7 +62,7 @@
       <xs:element name="GetPizzaSizesResponse">
         <xs:complexType>
           <xs:sequence>
-            <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/PizzaStoreData.DataService.Models" minOccurs="0" name="GetPizzaSizesResult" nillable="true" type="q3:ArrayOfPizzaSizeDAO" />
+            <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/PizzaStoreData.DataService.Models" minOccurs="0" name="GetPizzaSizesResult" nillable="true" type="q5:ArrayOfPizzaSizeDAO" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>
@@ -48,7 +74,7 @@
       <xs:element name="GetCrustTypesResponse">
         <xs:complexType>
           <xs:sequence>
-            <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/PizzaStoreData.DataService" minOccurs="0" name="GetCrustTypesResult" nillable="true" type="q4:ArrayOfCrustTypeDAO" />
+            <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/PizzaStoreData.DataService" minOccurs="0" name="GetCrustTypesResult" nillable="true" type="q6:ArrayOfCrustTypeDAO" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>
@@ -60,7 +86,7 @@
       <xs:element name="GetSauceTypesResponse">
         <xs:complexType>
           <xs:sequence>
-            <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/PizzaStoreData.DataService.Models" minOccurs="0" name="GetSauceTypesResult" nillable="true" type="q5:ArrayOfSauceTypeDAO" />
+            <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/PizzaStoreData.DataService.Models" minOccurs="0" name="GetSauceTypesResult" nillable="true" type="q7:ArrayOfSauceTypeDAO" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>
@@ -72,7 +98,7 @@
       <xs:element name="GetCheeseTypesResponse">
         <xs:complexType>
           <xs:sequence>
-            <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/PizzaStoreData.DataService" minOccurs="0" name="GetCheeseTypesResult" nillable="true" type="q6:ArrayOfCheeseTypeDAO" />
+            <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/PizzaStoreData.DataService" minOccurs="0" name="GetCheeseTypesResult" nillable="true" type="q8:ArrayOfCheeseTypeDAO" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>
@@ -84,7 +110,7 @@
       <xs:element name="GetToppingsResponse">
         <xs:complexType>
           <xs:sequence>
-            <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/PizzaStoreData.DataService" minOccurs="0" name="GetToppingsResult" nillable="true" type="q7:ArrayOfToppingDAO" />
+            <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/PizzaStoreData.DataService" minOccurs="0" name="GetToppingsResult" nillable="true" type="q9:ArrayOfToppingDAO" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>
@@ -96,7 +122,7 @@
       <xs:element name="GetToppingCategoriesResponse">
         <xs:complexType>
           <xs:sequence>
-            <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/PizzaStoreData.DataService" minOccurs="0" name="GetToppingCategoriesResult" nillable="true" type="q8:ArrayOfToppingCategoryDAO" />
+            <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/PizzaStoreData.DataService" minOccurs="0" name="GetToppingCategoriesResult" nillable="true" type="q10:ArrayOfToppingCategoryDAO" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>
@@ -108,7 +134,7 @@
       <xs:element name="GetToppingPlacementsResponse">
         <xs:complexType>
           <xs:sequence>
-            <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/PizzaStoreData.DataService" minOccurs="0" name="GetToppingPlacementsResult" nillable="true" type="q9:ArrayOfToppingPlacementDAO" />
+            <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/PizzaStoreData.DataService" minOccurs="0" name="GetToppingPlacementsResult" nillable="true" type="q11:ArrayOfToppingPlacementDAO" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>
@@ -120,7 +146,7 @@
       <xs:element name="GetToppingListsResponse">
         <xs:complexType>
           <xs:sequence>
-            <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/PizzaStoreData.DataService" minOccurs="0" name="GetToppingListsResult" nillable="true" type="q10:ArrayOfToppingListDAO" />
+            <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/PizzaStoreData.DataService" minOccurs="0" name="GetToppingListsResult" nillable="true" type="q12:ArrayOfToppingListDAO" />
           </xs:sequence>
         </xs:complexType>
       </xs:element>
@@ -271,6 +297,19 @@
       <xs:element name="ToppingListDAO" nillable="true" type="tns:ToppingListDAO" />
     </xs:schema>
     <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/PizzaStoreData.DataService.Models" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/PizzaStoreData.DataService.Models" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:complexType name="ArrayOfPaymentMethodDAO">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="PaymentMethodDAO" nillable="true" type="tns:PaymentMethodDAO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="ArrayOfPaymentMethodDAO" nillable="true" type="tns:ArrayOfPaymentMethodDAO" />
+      <xs:complexType name="PaymentMethodDAO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Id" type="xs:int" />
+          <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="PaymentMethodDAO" nillable="true" type="tns:PaymentMethodDAO" />
       <xs:complexType name="ArrayOfPizzaDAO">
         <xs:sequence>
           <xs:element minOccurs="0" maxOccurs="unbounded" name="PizzaDAO" nillable="true" type="tns:PizzaDAO" />
@@ -323,6 +362,18 @@
   </wsdl:message>
   <wsdl:message name="IPizzaStoreDataService_GetOrders_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetOrdersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreDataService_GetPaymentMethods_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPaymentMethods" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreDataService_GetPaymentMethods_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPaymentMethodsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreDataService_postOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:postOrder" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaStoreDataService_postOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:postOrderResponse" />
   </wsdl:message>
   <wsdl:message name="IPizzaStoreDataService_GetPizzas_InputMessage">
     <wsdl:part name="parameters" element="tns:GetPizzas" />
@@ -383,6 +434,14 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreDataService/GetOrders" message="tns:IPizzaStoreDataService_GetOrders_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreDataService/GetOrdersResponse" message="tns:IPizzaStoreDataService_GetOrders_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="GetPaymentMethods">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreDataService/GetPaymentMethods" message="tns:IPizzaStoreDataService_GetPaymentMethods_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreDataService/GetPaymentMethodsResponse" message="tns:IPizzaStoreDataService_GetPaymentMethods_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="postOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreDataService/postOrder" message="tns:IPizzaStoreDataService_postOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreDataService/postOrderResponse" message="tns:IPizzaStoreDataService_postOrder_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="GetPizzas">
       <wsdl:input wsaw:Action="http://tempuri.org/IPizzaStoreDataService/GetPizzas" message="tns:IPizzaStoreDataService_GetPizzas_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IPizzaStoreDataService/GetPizzasResponse" message="tns:IPizzaStoreDataService_GetPizzas_OutputMessage" />
@@ -424,6 +483,24 @@
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="GetOrders">
       <soap:operation soapAction="http://tempuri.org/IPizzaStoreDataService/GetOrders" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPaymentMethods">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreDataService/GetPaymentMethods" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="postOrder">
+      <soap:operation soapAction="http://tempuri.org/IPizzaStoreDataService/postOrder" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

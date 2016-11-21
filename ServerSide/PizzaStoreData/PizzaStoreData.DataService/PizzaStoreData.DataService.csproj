@@ -138,13 +138,14 @@
     <Compile Include="Models\CrustTypeDAO.cs" />
     <Compile Include="DataMapper.cs" />
     <Compile Include="EfData.cs" />
+    <Compile Include="Models\PaymentMethodDAO.cs" />
     <Compile Include="Models\PizzaDAO.cs" />
     <Compile Include="Models\PizzaSizeDAO.cs" />
     <Compile Include="Models\SauceTypeDAO.cs" />
+    <Compile Include="Models\OrderDAO.cs" />
     <Compile Include="Order.cs">
       <DependentUpon>PizzaStoreDataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\OrderDAO.cs" />
     <Compile Include="PaymentMethod.cs">
       <DependentUpon>PizzaStoreDataModel.tt</DependentUpon>
     </Compile>
@@ -174,6 +175,10 @@
     </Compile>
     <Compile Include="IPizzaStoreDataService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Models\ToppingCategoryDAO.cs" />
+    <Compile Include="Models\ToppingDAO.cs" />
+    <Compile Include="Models\ToppingListDAO.cs" />
+    <Compile Include="Models\ToppingPlacementDAO.cs" />
     <Compile Include="SauceType.cs">
       <DependentUpon>PizzaStoreDataModel.tt</DependentUpon>
     </Compile>
@@ -186,16 +191,12 @@
     <Compile Include="ToppingCategory.cs">
       <DependentUpon>PizzaStoreDataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\ToppingCategoryDAO.cs" />
-    <Compile Include="Models\ToppingDAO.cs" />
     <Compile Include="ToppingList.cs">
       <DependentUpon>PizzaStoreDataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\ToppingListDAO.cs" />
     <Compile Include="ToppingPlacement.cs">
       <DependentUpon>PizzaStoreDataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\ToppingPlacementDAO.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

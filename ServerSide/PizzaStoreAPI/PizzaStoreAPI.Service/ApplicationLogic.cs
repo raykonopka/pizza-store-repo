@@ -10,7 +10,11 @@ namespace PizzaStoreAPI.Service
     {
         private PizzaStoreDataServiceClient psDataClient = new PizzaStoreDataServiceClient();
 
-        #region Functions For Ordering Pizza
+        #region Options For Ordering Pizza
+        public List<PaymentMethodDAO> GetPaymentMethods()
+        {
+            return psDataClient.GetPaymentMethods().ToList();
+        }
 
         //Pizza Options
         public List<PizzaSizeDAO> GetPizzaSizes()
@@ -28,21 +32,71 @@ namespace PizzaStoreAPI.Service
             return psDataClient.GetCrustTypes().ToList();
         }
 
-        public List<CheeseTypeDAO> CheeseTypes()
+        public List<CheeseTypeDAO> GetCheeseTypes()
         {
             return psDataClient.GetCheeseTypes().ToList();
         }
 
 
         //Topping Options
-        public List<ToppingDAO> GetToppings()
+        public List<ToppingDAO> GetVegetableToppings()
         {
-            return psDataClient.GetToppings().ToList();
+            var vegCategory = psDataClient.GetToppingCategories().Where(vc => vc.Name == "Vegetables");
+            int vegCategoryId;
+
+            if(vegCategory.Count() == 1)
+            {
+                vegCategoryId = vegCategory.First().Id;
+
+                var vegetableToppings = psDataClient.GetToppings().Where(vt => vt.Category == vegCategoryId).ToList();
+
+                return vegetableToppings;
+            }
+
+            else
+            {
+                return null;
+            }
         }
 
-        public List<ToppingCategoryDAO> GetToppingCategories()
+        public List<ToppingDAO> GetMeatToppings()
         {
-            return psDataClient.GetToppingCategories().ToList();
+            var meatCategory = psDataClient.GetToppingCategories().Where(mc => mc.Name == "Meats");
+            int meatCategoryId;
+
+            if (meatCategory.Count() == 1)
+            {
+                meatCategoryId = meatCategory.First().Id;
+
+                var meatToppings = psDataClient.GetToppings().Where(mt => mt.Category == meatCategoryId).ToList();
+
+                return meatToppings;
+            }
+
+            else
+            {
+                return null;
+            } 
+        }
+
+        public List<ToppingDAO> GetAddionalCheeseToppings()
+        {
+            var addCheeseCategory = psDataClient.GetToppingCategories().Where(cc => cc.Name == "Additional Cheeses");
+            int addCheeseCategoryId;
+
+            if (addCheeseCategory.Count() == 1)
+            {
+                addCheeseCategoryId = addCheeseCategory.First().Id;
+
+                var addCheeseToppings = psDataClient.GetToppings().Where(ac => ac.Category == addCheeseCategoryId).ToList();
+
+                return addCheeseToppings;
+            }
+
+            else
+            {
+                return null;
+            }
         }
 
         public List<ToppingPlacementDAO> GetToppingPlacements()
@@ -50,20 +104,15 @@ namespace PizzaStoreAPI.Service
             return psDataClient.GetToppingPlacements().ToList();
         }
 
-        public List<ToppingListDAO> GetToppingList()
-        {
-            return psDataClient.GetToppingLists().ToList();
-        }
-
-
-        //Orders
-        public List<OrderDAO> GetOrders()
-        {
-            return psDataClient.GetOrders().ToList();
-        }
-
         #endregion
 
+        #region Functions For Ordering Pizza
+        public void sentOrder(OrderDAO newOrder)
+        {
+           psDataClient.postOrder(newOrder);
+        }
 
+
+        #endregion
     }
 }

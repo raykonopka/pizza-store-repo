@@ -23,6 +23,11 @@ namespace PizzaStoreData.DataAccess
         {
             return db.Customers.ToList();
         }
+        public List<PaymentMethod> GetPaymentMethods()
+        {
+            return db.PaymentMethods.ToList();
+        }
+
 
 
         //Store Related
@@ -96,6 +101,21 @@ namespace PizzaStoreData.DataAccess
         }
 
         #endregion
+
+        public bool AddNewOrder(OrderDAO orderDAOReceived)
+        {
+            Order newOrder = new Order();
+            newOrder.PaymentMethodId = orderDAOReceived.PaymentMethod;
+            newOrder.OrderDateTime = orderDAOReceived.Timestamp;
+            newOrder.CustomerId = orderDAOReceived.Customer;
+            newOrder.Subtotal = orderDAOReceived.Subtotal;
+            newOrder.Taxes = orderDAOReceived.Taxes;
+            newOrder.Total = orderDAOReceived.Total;
+
+            db.Orders.Add(newOrder);
+            db.SaveChanges();
+            return true;
+        }
 
     }
 }

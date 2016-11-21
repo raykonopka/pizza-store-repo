@@ -141,6 +141,9 @@
     <Content Include="Service References\PizzaStoreDataService\PizzaStoreAPI.Service.PizzaStoreDataService.OrderDAO.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Service References\PizzaStoreDataService\PizzaStoreAPI.Service.PizzaStoreDataService.PaymentMethodDAO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <Content Include="Service References\PizzaStoreDataService\PizzaStoreAPI.Service.PizzaStoreDataService.PizzaDAO.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -172,7 +175,16 @@
     <Compile Include="ApiTests.cs" />
     <Compile Include="ApplicationLogic.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\CheesesController.cs" />
+    <Compile Include="Controllers\AdditionalCheeseToppingsController.cs" />
+    <Compile Include="Controllers\CrustsController.cs" />
+    <Compile Include="Controllers\MeatToppingsController.cs" />
+    <Compile Include="Controllers\PaymentMethodsController.cs" />
+    <Compile Include="Controllers\PostOrderController.cs" />
     <Compile Include="Controllers\SaucesController.cs" />
+    <Compile Include="Controllers\SizesController.cs" />
+    <Compile Include="Controllers\ToppingPlacementsController.cs" />
+    <Compile Include="Controllers\VegetableToppingsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

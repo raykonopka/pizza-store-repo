@@ -29,5 +29,25 @@ namespace PizzaStoreData.DataTests
             Assert.NotNull(actual);
         }
 
+
+        [Fact]
+        public void Test_PostOrders()
+        {
+            var dataService = new PizzaStoreDataService();
+
+            OrderDAO orderDAOReceived = new OrderDAO();
+
+            orderDAOReceived.PaymentMethod = 1;
+            orderDAOReceived.Timestamp = DateTime.Now;
+            orderDAOReceived.Customer = 1;
+            orderDAOReceived.Subtotal = decimal.Parse("10.00");
+            orderDAOReceived.Taxes = decimal.Parse("2.00"); ;
+            orderDAOReceived.Total = decimal.Parse("12.00"); ;
+
+
+            bool actual = dataService.postOrder(orderDAOReceived);
+
+            Assert.True(actual);
+        }
     }
 }

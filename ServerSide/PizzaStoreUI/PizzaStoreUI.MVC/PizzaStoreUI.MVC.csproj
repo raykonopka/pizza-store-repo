@@ -80,6 +80,10 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData" />
@@ -88,6 +92,14 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
@@ -198,17 +210,18 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="ClientHelper.cs" />
-    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\PizzaStoreController.cs" />
-    <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\OrderReceipt.cs" />
     <Compile Include="Models\PizzaModel.cs" />
+    <Compile Include="Models\PizzaOrder.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\PizzaStoreDataService\Reference.cs">
       <AutoGen>True</AutoGen>
@@ -224,6 +237,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\pizza-img-1.jpg" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -244,12 +258,6 @@
     <Content Include="Scripts\_references.js" />
     <None Include="Service References\PizzaStoreDataService\configuration91.svcinfo" />
     <None Include="Service References\PizzaStoreDataService\configuration.svcinfo" />
-    <Content Include="Service References\PizzaStoreDataService\PizzaStoreUI.MVC.PizzaStoreDataService.PizzaDAO.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\PizzaStoreDataService\PizzaStoreUI.MVC.PizzaStoreDataService.SauceTypeDAO.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <Content Include="Service References\PizzaStoreDataService\PizzaStoreUI.MVC.PizzaStoreDataService.CheeseTypeDAO.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -259,7 +267,16 @@
     <Content Include="Service References\PizzaStoreDataService\PizzaStoreUI.MVC.PizzaStoreDataService.OrderDAO.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Service References\PizzaStoreDataService\PizzaStoreUI.MVC.PizzaStoreDataService.PaymentMethodDAO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PizzaStoreDataService\PizzaStoreUI.MVC.PizzaStoreDataService.PizzaDAO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <Content Include="Service References\PizzaStoreDataService\PizzaStoreUI.MVC.PizzaStoreDataService.PizzaSizeDAO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\PizzaStoreDataService\PizzaStoreUI.MVC.PizzaStoreDataService.SauceTypeDAO.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Service References\PizzaStoreDataService\PizzaStoreUI.MVC.PizzaStoreDataService.ToppingCategoryDAO.datasource">
@@ -292,26 +309,11 @@
     <Content Include="Views\PizzaStore\Order.cshtml" />
     <Content Include="Views\PizzaStore\OrderHistory.cshtml" />
     <Content Include="Views\PizzaStore\Index.cshtml" />
-    <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
-    <Content Include="Views\Account\ConfirmEmail.cshtml" />
-    <Content Include="Views\Account\ExternalLoginConfirmation.cshtml" />
-    <Content Include="Views\Account\ExternalLoginFailure.cshtml" />
-    <Content Include="Views\Account\ForgotPassword.cshtml" />
-    <Content Include="Views\Account\ForgotPasswordConfirmation.cshtml" />
-    <Content Include="Views\Account\Login.cshtml" />
-    <Content Include="Views\Account\Register.cshtml" />
-    <Content Include="Views\Account\ResetPassword.cshtml" />
-    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
-    <Content Include="Views\Account\SendCode.cshtml" />
-    <Content Include="Views\Account\VerifyCode.cshtml" />
-    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
-    <Content Include="Views\Manage\ChangePassword.cshtml" />
-    <Content Include="Views\Manage\Index.cshtml" />
-    <Content Include="Views\Manage\ManageLogins.cshtml" />
-    <Content Include="Views\Manage\SetPassword.cshtml" />
-    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
-    <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\PizzaStore\OrderPending.cshtml" />
+    <Content Include="Views\PizzaStore\OrderConfirmed.cshtml" />
+    <Content Include="Views\PizzaStore\Login.cshtml" />
+    <Content Include="Views\PizzaStore\LoginAttempt.cshtml" />
     <None Include="Service References\PizzaStoreDataService\PizzaStoreDataService.wsdl" />
   </ItemGroup>
   <ItemGroup>
