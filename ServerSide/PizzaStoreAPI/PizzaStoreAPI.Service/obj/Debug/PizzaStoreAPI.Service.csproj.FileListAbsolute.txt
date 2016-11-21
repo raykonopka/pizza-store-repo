@@ -1,3 +1,6 @@
+C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreAPI\PizzaStoreAPI.Service\bin\xunit.abstractions.dll
+C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreAPI\PizzaStoreAPI.Service\bin\xunit.runner.visualstudio.testadapter.dll
+C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreAPI\PizzaStoreAPI.Service\bin\xunit.runner.utility.desktop.dll
 C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreAPI\PizzaStoreAPI.Service\bin\ApplicationInsights.config
 C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreAPI\PizzaStoreAPI.Service\bin\roslyn\csc.exe
 C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreAPI\PizzaStoreAPI.Service\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
@@ -26,7 +29,6 @@ C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreAPI\PizzaStoreAPI.Se
 C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreAPI\PizzaStoreAPI.Service\bin\System.Net.Http.Formatting.dll
 C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreAPI\PizzaStoreAPI.Service\bin\System.Web.Http.dll
 C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreAPI\PizzaStoreAPI.Service\bin\System.Web.Http.WebHost.dll
-C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreAPI\PizzaStoreAPI.Service\bin\xunit.abstractions.dll
 C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreAPI\PizzaStoreAPI.Service\bin\xunit.assert.dll
 C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreAPI\PizzaStoreAPI.Service\bin\xunit.core.dll
 C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreAPI\PizzaStoreAPI.Service\bin\xunit.execution.desktop.dll
@@ -36,7 +38,6 @@ C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreAPI\PizzaStoreAPI.Se
 C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreAPI\PizzaStoreAPI.Service\bin\Microsoft.AI.WindowsServer.xml
 C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreAPI\PizzaStoreAPI.Service\bin\Microsoft.ApplicationInsights.xml
 C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreAPI\PizzaStoreAPI.Service\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreAPI\PizzaStoreAPI.Service\bin\xunit.abstractions.xml
 C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreAPI\PizzaStoreAPI.Service\bin\xunit.assert.pdb
 C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreAPI\PizzaStoreAPI.Service\bin\xunit.assert.xml
 C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreAPI\PizzaStoreAPI.Service\bin\xunit.core.pdb

@@ -12,20 +12,22 @@ namespace PizzaStoreData.DataTests
 {
     public class DataServiceTests
     {
+        
         [Fact]
-        public void Test_GetPizzas()
+        public void Test_GetSauceTypes()
         {
             var dataService = new PizzaStoreDataService();
 
-            List<PizzaDAO> actual = dataService.GetPizzas();
+            List<SauceTypeDAO> actual = dataService.GetSauceTypes();
 
-            foreach(PizzaDAO p in actual)
+            foreach (SauceTypeDAO s in actual)
             {
-                Debug.WriteLine("NEW PIZZA ID BELOW:");
-                Debug.WriteLine(p.Id);
+                Debug.WriteLine("NEW SAUCE NAME BELOW:");
+                Debug.WriteLine(s.Name);
             }
 
             Assert.NotNull(actual);
         }
+
     }
 }

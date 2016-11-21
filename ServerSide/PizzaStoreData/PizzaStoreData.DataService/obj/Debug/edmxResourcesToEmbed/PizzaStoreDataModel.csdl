@@ -1,0 +1,456 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PizzaStoreDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Address">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Street" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="City" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LocationState" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ZipCode" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Customers" Relationship="Self.fk_customers_deliveryaddressid" FromRole="Addresses" ToRole="Customers" />
+    <NavigationProperty Name="Stores" Relationship="Self.fk_stores_storeaddressid" FromRole="Addresses" ToRole="Stores" />
+  </EntityType>
+  <EntityType Name="CheeseType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CheeseTypeName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CheesePrice" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <NavigationProperty Name="Pizzas" Relationship="Self.fk_pizzas_cheesetypeid" FromRole="CheeseTypes" ToRole="Pizzas" />
+  </EntityType>
+  <EntityType Name="CrustType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CrustTypeName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CrustPrice" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <NavigationProperty Name="Pizzas" Relationship="Self.fk_pizzas_crusttypeid" FromRole="CrustTypes" ToRole="Pizzas" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Username" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UserPassword" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DeliveryAddressId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Address" Relationship="Self.fk_customers_deliveryaddressid" FromRole="Customers" ToRole="Addresses" />
+    <NavigationProperty Name="Orders" Relationship="Self.fk_orders_customerid" FromRole="Customers" ToRole="Orders" />
+  </EntityType>
+  <EntityType Name="DaysOpen">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StoreId" Type="Int32" Nullable="false" />
+    <Property Name="DayOpenEntryId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="DaysOpenEntry" Relationship="Self.fk_daysopen_dayopenentryid" FromRole="DaysOpen" ToRole="DaysOpenEntries" />
+    <NavigationProperty Name="Store" Relationship="Self.fk_daysopen_storeid" FromRole="DaysOpen" ToRole="Stores" />
+  </EntityType>
+  <EntityType Name="DaysOpenEntry">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DayTitleId" Type="Int32" Nullable="false" />
+    <Property Name="OpenTime" Type="Time" Nullable="false" Precision="0" />
+    <Property Name="CloseTime" Type="Time" Nullable="false" Precision="0" />
+    <NavigationProperty Name="DaysOpens" Relationship="Self.fk_daysopen_dayopenentryid" FromRole="DaysOpenEntries" ToRole="DaysOpen" />
+    <NavigationProperty Name="DayTitle" Relationship="Self.fk_daysopenentries_daytitleid" FromRole="DaysOpenEntries" ToRole="DayTitles" />
+  </EntityType>
+  <EntityType Name="DayTitle">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DayTitle1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="DaysOpenEntries" Relationship="Self.fk_daysopenentries_daytitleid" FromRole="DayTitles" ToRole="DaysOpenEntries" />
+  </EntityType>
+  <EntityType Name="Order">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Subtotal" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Taxes" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Total" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="OrderDateTime" Type="DateTime" Precision="3" />
+    <Property Name="CustomerId" Type="Int32" Nullable="false" />
+    <Property Name="PaymentMethodId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Customer" Relationship="Self.fk_orders_customerid" FromRole="Orders" ToRole="Customers" />
+    <NavigationProperty Name="PaymentMethod" Relationship="Self.fk_orders_paymentmethodid" FromRole="Orders" ToRole="PaymentMethods" />
+    <NavigationProperty Name="Pizzas" Relationship="Self.fk_pizzas_orderid" FromRole="Orders" ToRole="Pizzas" />
+  </EntityType>
+  <EntityType Name="PaymentMethod">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PaymentName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Orders" Relationship="Self.fk_orders_paymentmethodid" FromRole="PaymentMethods" ToRole="Orders" />
+  </EntityType>
+  <EntityType Name="Pizza">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PizzaSizeId" Type="Int32" Nullable="false" />
+    <Property Name="CrustTypeId" Type="Int32" Nullable="false" />
+    <Property Name="SauceTypeId" Type="Int32" Nullable="false" />
+    <Property Name="CheeseTypeId" Type="Int32" Nullable="false" />
+    <Property Name="OrderId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="CheeseType" Relationship="Self.fk_pizzas_cheesetypeid" FromRole="Pizzas" ToRole="CheeseTypes" />
+    <NavigationProperty Name="CrustType" Relationship="Self.fk_pizzas_crusttypeid" FromRole="Pizzas" ToRole="CrustTypes" />
+    <NavigationProperty Name="Order" Relationship="Self.fk_pizzas_orderid" FromRole="Pizzas" ToRole="Orders" />
+    <NavigationProperty Name="PizzaSize" Relationship="Self.fk_pizzas_pizzasizeid" FromRole="Pizzas" ToRole="PizzaSizes" />
+    <NavigationProperty Name="SauceType" Relationship="Self.fk_pizzas_saucetypeid" FromRole="Pizzas" ToRole="SauceTypes" />
+    <NavigationProperty Name="ToppingLists" Relationship="Self.fk_toppinglists_pizzaid" FromRole="Pizzas" ToRole="ToppingLists" />
+  </EntityType>
+  <EntityType Name="PizzaSize">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SizeName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SizePrice" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <NavigationProperty Name="Pizzas" Relationship="Self.fk_pizzas_pizzasizeid" FromRole="PizzaSizes" ToRole="Pizzas" />
+  </EntityType>
+  <EntityType Name="SauceType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SauceTypeName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SaucePrice" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <NavigationProperty Name="Pizzas" Relationship="Self.fk_pizzas_saucetypeid" FromRole="SauceTypes" ToRole="Pizzas" />
+  </EntityType>
+  <EntityType Name="Store">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StoreName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="StoreAddressId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Address" Relationship="Self.fk_stores_storeaddressid" FromRole="Stores" ToRole="Addresses" />
+    <NavigationProperty Name="DaysOpens" Relationship="Self.fk_daysopen_storeid" FromRole="Stores" ToRole="DaysOpen" />
+  </EntityType>
+  <EntityType Name="ToppingCategory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Toppings" Relationship="Self.fk_toppings_toppingcategoryid" FromRole="ToppingCategories" ToRole="Toppings" />
+  </EntityType>
+  <EntityType Name="ToppingList">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PizzaId" Type="Int32" Nullable="false" />
+    <Property Name="ToppingId" Type="Int32" Nullable="false" />
+    <Property Name="ToppingPlacementId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Pizza" Relationship="Self.fk_toppinglists_pizzaid" FromRole="ToppingLists" ToRole="Pizzas" />
+    <NavigationProperty Name="Topping" Relationship="Self.fk_toppinglists_toppingid" FromRole="ToppingLists" ToRole="Toppings" />
+    <NavigationProperty Name="ToppingPlacement" Relationship="Self.fk_toppinglists_toppingplacementid" FromRole="ToppingLists" ToRole="ToppingPlacements" />
+  </EntityType>
+  <EntityType Name="ToppingPlacement">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Placement" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="ToppingLists" Relationship="Self.fk_toppinglists_toppingplacementid" FromRole="ToppingPlacements" ToRole="ToppingLists" />
+  </EntityType>
+  <EntityType Name="Topping">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ToppingName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Price" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="ToppingCategoryId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="ToppingCategory" Relationship="Self.fk_toppings_toppingcategoryid" FromRole="Toppings" ToRole="ToppingCategories" />
+    <NavigationProperty Name="ToppingLists" Relationship="Self.fk_toppinglists_toppingid" FromRole="Toppings" ToRole="ToppingLists" />
+  </EntityType>
+  <Association Name="fk_customers_deliveryaddressid">
+    <End Role="Addresses" Type="Self.Address" Multiplicity="1" />
+    <End Role="Customers" Type="Self.Customer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Addresses">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Customers">
+        <PropertyRef Name="DeliveryAddressId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_stores_storeaddressid">
+    <End Role="Addresses" Type="Self.Address" Multiplicity="1" />
+    <End Role="Stores" Type="Self.Store" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Addresses">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Stores">
+        <PropertyRef Name="StoreAddressId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_pizzas_cheesetypeid">
+    <End Role="CheeseTypes" Type="Self.CheeseType" Multiplicity="1" />
+    <End Role="Pizzas" Type="Self.Pizza" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CheeseTypes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Pizzas">
+        <PropertyRef Name="CheeseTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_pizzas_crusttypeid">
+    <End Role="CrustTypes" Type="Self.CrustType" Multiplicity="1" />
+    <End Role="Pizzas" Type="Self.Pizza" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CrustTypes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Pizzas">
+        <PropertyRef Name="CrustTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_orders_customerid">
+    <End Role="Customers" Type="Self.Customer" Multiplicity="1" />
+    <End Role="Orders" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="CustomerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_daysopen_dayopenentryid">
+    <End Role="DaysOpenEntries" Type="Self.DaysOpenEntry" Multiplicity="1" />
+    <End Role="DaysOpen" Type="Self.DaysOpen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DaysOpenEntries">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DaysOpen">
+        <PropertyRef Name="DayOpenEntryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_daysopen_storeid">
+    <End Role="Stores" Type="Self.Store" Multiplicity="1" />
+    <End Role="DaysOpen" Type="Self.DaysOpen" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Stores">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DaysOpen">
+        <PropertyRef Name="StoreId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_daysopenentries_daytitleid">
+    <End Role="DayTitles" Type="Self.DayTitle" Multiplicity="1" />
+    <End Role="DaysOpenEntries" Type="Self.DaysOpenEntry" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DayTitles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DaysOpenEntries">
+        <PropertyRef Name="DayTitleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_orders_paymentmethodid">
+    <End Role="PaymentMethods" Type="Self.PaymentMethod" Multiplicity="1" />
+    <End Role="Orders" Type="Self.Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PaymentMethods">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Orders">
+        <PropertyRef Name="PaymentMethodId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_pizzas_orderid">
+    <End Role="Orders" Type="Self.Order" Multiplicity="1" />
+    <End Role="Pizzas" Type="Self.Pizza" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Orders">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Pizzas">
+        <PropertyRef Name="OrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_pizzas_pizzasizeid">
+    <End Role="PizzaSizes" Type="Self.PizzaSize" Multiplicity="1" />
+    <End Role="Pizzas" Type="Self.Pizza" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PizzaSizes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Pizzas">
+        <PropertyRef Name="PizzaSizeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_pizzas_saucetypeid">
+    <End Role="SauceTypes" Type="Self.SauceType" Multiplicity="1" />
+    <End Role="Pizzas" Type="Self.Pizza" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SauceTypes">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Pizzas">
+        <PropertyRef Name="SauceTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_toppinglists_pizzaid">
+    <End Role="Pizzas" Type="Self.Pizza" Multiplicity="1" />
+    <End Role="ToppingLists" Type="Self.ToppingList" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pizzas">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ToppingLists">
+        <PropertyRef Name="PizzaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_toppings_toppingcategoryid">
+    <End Role="ToppingCategories" Type="Self.ToppingCategory" Multiplicity="1" />
+    <End Role="Toppings" Type="Self.Topping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ToppingCategories">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Toppings">
+        <PropertyRef Name="ToppingCategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_toppinglists_toppingid">
+    <End Role="Toppings" Type="Self.Topping" Multiplicity="1" />
+    <End Role="ToppingLists" Type="Self.ToppingList" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Toppings">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ToppingLists">
+        <PropertyRef Name="ToppingId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_toppinglists_toppingplacementid">
+    <End Role="ToppingPlacements" Type="Self.ToppingPlacement" Multiplicity="1" />
+    <End Role="ToppingLists" Type="Self.ToppingList" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ToppingPlacements">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ToppingLists">
+        <PropertyRef Name="ToppingPlacementId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="PizzaStoreDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Addresses" EntityType="Self.Address" />
+    <EntitySet Name="CheeseTypes" EntityType="Self.CheeseType" />
+    <EntitySet Name="CrustTypes" EntityType="Self.CrustType" />
+    <EntitySet Name="Customers" EntityType="Self.Customer" />
+    <EntitySet Name="DaysOpens" EntityType="Self.DaysOpen" />
+    <EntitySet Name="DaysOpenEntries" EntityType="Self.DaysOpenEntry" />
+    <EntitySet Name="DayTitles" EntityType="Self.DayTitle" />
+    <EntitySet Name="Orders" EntityType="Self.Order" />
+    <EntitySet Name="PaymentMethods" EntityType="Self.PaymentMethod" />
+    <EntitySet Name="Pizzas" EntityType="Self.Pizza" />
+    <EntitySet Name="PizzaSizes" EntityType="Self.PizzaSize" />
+    <EntitySet Name="SauceTypes" EntityType="Self.SauceType" />
+    <EntitySet Name="Stores" EntityType="Self.Store" />
+    <EntitySet Name="ToppingCategories" EntityType="Self.ToppingCategory" />
+    <EntitySet Name="ToppingLists" EntityType="Self.ToppingList" />
+    <EntitySet Name="ToppingPlacements" EntityType="Self.ToppingPlacement" />
+    <EntitySet Name="Toppings" EntityType="Self.Topping" />
+    <AssociationSet Name="fk_customers_deliveryaddressid" Association="Self.fk_customers_deliveryaddressid">
+      <End Role="Addresses" EntitySet="Addresses" />
+      <End Role="Customers" EntitySet="Customers" />
+    </AssociationSet>
+    <AssociationSet Name="fk_stores_storeaddressid" Association="Self.fk_stores_storeaddressid">
+      <End Role="Addresses" EntitySet="Addresses" />
+      <End Role="Stores" EntitySet="Stores" />
+    </AssociationSet>
+    <AssociationSet Name="fk_pizzas_cheesetypeid" Association="Self.fk_pizzas_cheesetypeid">
+      <End Role="CheeseTypes" EntitySet="CheeseTypes" />
+      <End Role="Pizzas" EntitySet="Pizzas" />
+    </AssociationSet>
+    <AssociationSet Name="fk_pizzas_crusttypeid" Association="Self.fk_pizzas_crusttypeid">
+      <End Role="CrustTypes" EntitySet="CrustTypes" />
+      <End Role="Pizzas" EntitySet="Pizzas" />
+    </AssociationSet>
+    <AssociationSet Name="fk_orders_customerid" Association="Self.fk_orders_customerid">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="fk_daysopen_dayopenentryid" Association="Self.fk_daysopen_dayopenentryid">
+      <End Role="DaysOpenEntries" EntitySet="DaysOpenEntries" />
+      <End Role="DaysOpen" EntitySet="DaysOpens" />
+    </AssociationSet>
+    <AssociationSet Name="fk_daysopen_storeid" Association="Self.fk_daysopen_storeid">
+      <End Role="Stores" EntitySet="Stores" />
+      <End Role="DaysOpen" EntitySet="DaysOpens" />
+    </AssociationSet>
+    <AssociationSet Name="fk_daysopenentries_daytitleid" Association="Self.fk_daysopenentries_daytitleid">
+      <End Role="DayTitles" EntitySet="DayTitles" />
+      <End Role="DaysOpenEntries" EntitySet="DaysOpenEntries" />
+    </AssociationSet>
+    <AssociationSet Name="fk_orders_paymentmethodid" Association="Self.fk_orders_paymentmethodid">
+      <End Role="PaymentMethods" EntitySet="PaymentMethods" />
+      <End Role="Orders" EntitySet="Orders" />
+    </AssociationSet>
+    <AssociationSet Name="fk_pizzas_orderid" Association="Self.fk_pizzas_orderid">
+      <End Role="Orders" EntitySet="Orders" />
+      <End Role="Pizzas" EntitySet="Pizzas" />
+    </AssociationSet>
+    <AssociationSet Name="fk_pizzas_pizzasizeid" Association="Self.fk_pizzas_pizzasizeid">
+      <End Role="PizzaSizes" EntitySet="PizzaSizes" />
+      <End Role="Pizzas" EntitySet="Pizzas" />
+    </AssociationSet>
+    <AssociationSet Name="fk_pizzas_saucetypeid" Association="Self.fk_pizzas_saucetypeid">
+      <End Role="SauceTypes" EntitySet="SauceTypes" />
+      <End Role="Pizzas" EntitySet="Pizzas" />
+    </AssociationSet>
+    <AssociationSet Name="fk_toppinglists_pizzaid" Association="Self.fk_toppinglists_pizzaid">
+      <End Role="Pizzas" EntitySet="Pizzas" />
+      <End Role="ToppingLists" EntitySet="ToppingLists" />
+    </AssociationSet>
+    <AssociationSet Name="fk_toppings_toppingcategoryid" Association="Self.fk_toppings_toppingcategoryid">
+      <End Role="ToppingCategories" EntitySet="ToppingCategories" />
+      <End Role="Toppings" EntitySet="Toppings" />
+    </AssociationSet>
+    <AssociationSet Name="fk_toppinglists_toppingid" Association="Self.fk_toppinglists_toppingid">
+      <End Role="Toppings" EntitySet="Toppings" />
+      <End Role="ToppingLists" EntitySet="ToppingLists" />
+    </AssociationSet>
+    <AssociationSet Name="fk_toppinglists_toppingplacementid" Association="Self.fk_toppinglists_toppingplacementid">
+      <End Role="ToppingPlacements" EntitySet="ToppingPlacements" />
+      <End Role="ToppingLists" EntitySet="ToppingLists" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

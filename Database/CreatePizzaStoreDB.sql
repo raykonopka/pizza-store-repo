@@ -32,7 +32,7 @@ GO
 CREATE TABLE PizzaStore.PizzaSizes
 (
     Id INT not null IDENTITY(1,1)
-    ,PizzaSize NVARCHAR(100) not null
+    ,SizeName NVARCHAR(100) not null
 	,SizePrice DEC(19,4) not null
 );
 
@@ -302,7 +302,7 @@ VALUES ('Normal', 0.00), ('Thin', 0.00);
 GO
 
 INSERT INTO PizzaStore.SauceTypes
-VALUES ('Normal', 0.00), ('Extra', 0.75), ('Alfredo', 0.00), ('No Sauce', 0.00);
+VALUES ('Normal', 0.00), ('Extra', 0.75), ('Alfredo', 0.00), ('BBQ', 0.00), ('No Sauce', 0.00);
 GO
 
 INSERT INTO PizzaStore.ToppingPlacements
@@ -465,8 +465,8 @@ GO
 
 /*
 -- Remove existing data
-DELETE FROM PizzaStore.Pizzas
-WHERE Id = 4;
+DELETE FROM PizzaStore.SauceTypes
+WHERE Id = 5;
 GO
 */
 

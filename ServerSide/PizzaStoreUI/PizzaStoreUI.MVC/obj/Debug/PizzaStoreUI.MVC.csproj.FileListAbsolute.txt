@@ -77,6 +77,6 @@ C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreUI\PizzaStoreUI.MVC\
 C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreUI\PizzaStoreUI.MVC\bin\Microsoft.Owin.Security.Google.xml
 C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreUI\PizzaStoreUI.MVC\bin\Microsoft.Owin.Security.Twitter.xml
 C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreUI\PizzaStoreUI.MVC\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreUI\PizzaStoreUI.MVC\obj\Debug\PizzaStoreUI.MVC.csprojResolveAssemblyReference.cache
 C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreUI\PizzaStoreUI.MVC\obj\Debug\PizzaStoreUI.MVC.dll
 C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreUI\PizzaStoreUI.MVC\obj\Debug\PizzaStoreUI.MVC.pdb
-C:\RevatureDev\GitHub\pizza-store-repo\ServerSide\PizzaStoreUI\PizzaStoreUI.MVC\obj\Debug\PizzaStoreUI.MVC.csprojResolveAssemblyReference.cache

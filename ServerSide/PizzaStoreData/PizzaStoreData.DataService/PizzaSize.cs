@@ -21,7 +21,7 @@ namespace PizzaStoreData.DataService
         }
     
         public int Id { get; set; }
-        public string PizzaSize1 { get; set; }
+        public string SizeName { get; set; }
         public decimal SizePrice { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

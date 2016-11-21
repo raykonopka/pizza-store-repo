@@ -1,8 +1,10 @@
-﻿using PizzaStoreAPI.Service.PizzaStoreDataService;
+﻿using PizzaStoreAPI.Service.Controllers;
+using PizzaStoreAPI.Service.PizzaStoreDataService;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using Xunit;
@@ -11,20 +13,26 @@ namespace PizzaStoreAPI.Tests
 {
     public class ApiTests
     {
+        //Test After API Is Published
+
         [Fact]
-        public void Test_GetPizzas()
+        public void Test_GetAllSauces()
         {
-            PizzaStoreDataServiceClient psDataClient = new PizzaStoreDataServiceClient();
+            HttpClient httpClient = new HttpClient();
 
-            var actual = psDataClient.GetPizzas().ToList();
+            var actual = httpClient.GetAsync("http://ec2-54-147-132-20.compute-1.amazonaws.com/pizza-store-api/api/sauces/").Result;
 
-            foreach (PizzaDAO p in actual)
+            if (actual.IsSuccessStatusCode)
             {
-                Debug.WriteLine("NEW PIZZA ID BELOW:");
-                Debug.WriteLine(p.Id);
+                Debug.WriteLine("Sauce JSON Content Received.");
+            }
+            else
+            {
+                Debug.WriteLine("Sauce JSON Failed To Send.");
             }
 
-            Assert.NotNull(actual);
+            Assert.True(actual.IsSuccessStatusCode);
         }
+
     }
 }

@@ -99,97 +99,103 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="PizzaStoreDataModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PizzaStoreDataModel.edmx</DependentUpon>
+      <LastGenOutput>PizzaStoreDataModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="PizzaStoreDataModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PizzaStoreDataModel.edmx</DependentUpon>
+      <LastGenOutput>PizzaStoreDataModel.cs</LastGenOutput>
+    </Content>
     <Content Include="PizzaStoreDataService.svc" />
-    <Content Include="PizzaStoreModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>PizzaStoreModel.edmx</DependentUpon>
-      <LastGenOutput>PizzaStoreModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="PizzaStoreModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>PizzaStoreModel.edmx</DependentUpon>
-      <LastGenOutput>PizzaStoreModel.cs</LastGenOutput>
-    </Content>
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Address.cs">
-      <DependentUpon>PizzaStoreModel.tt</DependentUpon>
+      <DependentUpon>PizzaStoreDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="CheeseType.cs">
-      <DependentUpon>PizzaStoreModel.tt</DependentUpon>
+      <DependentUpon>PizzaStoreDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="CrustType.cs">
-      <DependentUpon>PizzaStoreModel.tt</DependentUpon>
+      <DependentUpon>PizzaStoreDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Customer.cs">
-      <DependentUpon>PizzaStoreModel.tt</DependentUpon>
+      <DependentUpon>PizzaStoreDataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="DataMapper.cs" />
     <Compile Include="DaysOpen.cs">
-      <DependentUpon>PizzaStoreModel.tt</DependentUpon>
+      <DependentUpon>PizzaStoreDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DaysOpenEntry.cs">
-      <DependentUpon>PizzaStoreModel.tt</DependentUpon>
+      <DependentUpon>PizzaStoreDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="DayTitle.cs">
-      <DependentUpon>PizzaStoreModel.tt</DependentUpon>
+      <DependentUpon>PizzaStoreDataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\CheeseTypeDAO.cs" />
+    <Compile Include="Models\CrustTypeDAO.cs" />
+    <Compile Include="DataMapper.cs" />
     <Compile Include="EfData.cs" />
     <Compile Include="Models\PizzaDAO.cs" />
+    <Compile Include="Models\PizzaSizeDAO.cs" />
+    <Compile Include="Models\SauceTypeDAO.cs" />
     <Compile Include="Order.cs">
-      <DependentUpon>PizzaStoreModel.tt</DependentUpon>
+      <DependentUpon>PizzaStoreDataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\OrderDAO.cs" />
     <Compile Include="PaymentMethod.cs">
-      <DependentUpon>PizzaStoreModel.tt</DependentUpon>
+      <DependentUpon>PizzaStoreDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Pizza.cs">
-      <DependentUpon>PizzaStoreModel.tt</DependentUpon>
+      <DependentUpon>PizzaStoreDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="PizzaSize.cs">
-      <DependentUpon>PizzaStoreModel.tt</DependentUpon>
+      <DependentUpon>PizzaStoreDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PizzaStoreDataModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PizzaStoreDataModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PizzaStoreDataModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PizzaStoreDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PizzaStoreDataModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PizzaStoreDataModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="PizzaStoreDataService.svc.cs">
       <DependentUpon>PizzaStoreDataService.svc</DependentUpon>
     </Compile>
     <Compile Include="IPizzaStoreDataService.cs" />
-    <Compile Include="PizzaStoreModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PizzaStoreModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="PizzaStoreModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PizzaStoreModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="PizzaStoreModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PizzaStoreModel.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SauceType.cs">
-      <DependentUpon>PizzaStoreModel.tt</DependentUpon>
+      <DependentUpon>PizzaStoreDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Store.cs">
-      <DependentUpon>PizzaStoreModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="sysdiagram.cs">
-      <DependentUpon>PizzaStoreModel.tt</DependentUpon>
+      <DependentUpon>PizzaStoreDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Topping.cs">
-      <DependentUpon>PizzaStoreModel.tt</DependentUpon>
+      <DependentUpon>PizzaStoreDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="ToppingCategory.cs">
-      <DependentUpon>PizzaStoreModel.tt</DependentUpon>
+      <DependentUpon>PizzaStoreDataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ToppingCategoryDAO.cs" />
+    <Compile Include="Models\ToppingDAO.cs" />
     <Compile Include="ToppingList.cs">
-      <DependentUpon>PizzaStoreModel.tt</DependentUpon>
+      <DependentUpon>PizzaStoreDataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ToppingListDAO.cs" />
     <Compile Include="ToppingPlacement.cs">
-      <DependentUpon>PizzaStoreModel.tt</DependentUpon>
+      <DependentUpon>PizzaStoreDataModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ToppingPlacementDAO.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -199,12 +205,12 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <EntityDeploy Include="PizzaStoreModel.edmx">
+    <EntityDeploy Include="PizzaStoreDataModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>PizzaStoreModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>PizzaStoreDataModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="PizzaStoreModel.edmx.diagram">
-      <DependentUpon>PizzaStoreModel.edmx</DependentUpon>
+    <Content Include="PizzaStoreDataModel.edmx.diagram">
+      <DependentUpon>PizzaStoreDataModel.edmx</DependentUpon>
     </Content>
     <None Include="Properties\PublishProfiles\AWS-EC2-PizzaStoreDataService.pubxml" />
     <None Include="Web.Debug.config">

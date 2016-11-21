@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PizzaStoreUI.MVC.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -15,9 +16,8 @@ namespace PizzaStoreUI.MVC.Controllers
 
         public ActionResult Order()
         {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
+            var model = new PizzaModel();
+            return View(model);
         }
 
         public ActionResult OrderHistory()
